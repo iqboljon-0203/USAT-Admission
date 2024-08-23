@@ -1,0 +1,39 @@
+.hero {
+    background-image: url('../../assets/logos/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+.title {
+    width: 60%;
+    text-transform: uppercase;
+    font-family: Steppe Trial;
+    font-size: 82px;
+    font-weight: 700;
+    line-height: 73.8px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+.info {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 44.8px;
+    text-align: center;
+    width: 46%;
+    color: white;
+    margin-bottom: 40px;
+}
+.buttons {
+    display: flex;
+    gap: 20px;
+}

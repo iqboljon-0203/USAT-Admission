@@ -1,0 +1,64 @@
+.magistr {
+    width: 100%;
+    padding-top: 20px;
+    margin-bottom: 40px;
+}
+.magistr_list {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    border-radius: 30px;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 20px;
+}
+.magistr_item {
+    width: 49.5%;
+    margin: 0px;
+    border-radius: 30px;
+}
+.magistr_item_first {
+    width: 50.5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 1);
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+.inner_item{
+    width: 80%;
+}
+.magistr_item_title {
+    font-family: Steppe Trial;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 50.2px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    color: rgba(33, 70, 109, 1);
+    margin-bottom: 20px;
+}
+.magistr_item_title span {
+    font-family: Steppe Trial;
+    font-size: 48px;
+    display: block;
+    font-weight: 700;
+    line-height: 43.2px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: left;
+    color: rgba(255, 200, 42, 1);
+}
+.magistr_item_text {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33.6px;
+    text-align: left;
+    margin-bottom: 30px;
+    color: rgba(33, 70, 109, 0.35);
+}
