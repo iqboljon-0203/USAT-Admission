@@ -3,11 +3,13 @@ import { Button } from '@nextui-org/react';
 import { UserIcon } from './UserIcon';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import classses from './page.module.css'
 export default function App() {
     const { t } = useTranslation();
     return (
         <Link href="https://qabul.usat.uz/?phone=null">
             <Button
+            id={classses.button}
                 color="default"
                 variant="flat"
                 size="lg"

@@ -23,13 +23,28 @@ export default function App() {
     return (
         <>
             <Swiper
-                slidesPerView={4}
-                spaceBetween={30}
+                slidesPerView={1}
+                spaceBetween={10}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[Pagination]}
                 className="mySwiper"
+                breakpoints={{
+                    1100: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                    // Qo'shimcha breakpointlar
+                    545: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                }}
             >
                 <SwiperSlide>
                     <li className={classes.about_item}>
