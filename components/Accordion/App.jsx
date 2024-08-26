@@ -359,7 +359,7 @@ export default function App() {
 
     return (
         <Accordion
-            className="px-10 rounded-xl"
+            className="px-4 rounded-xl"
             motionProps={{
                 variants: {
                     enter: {

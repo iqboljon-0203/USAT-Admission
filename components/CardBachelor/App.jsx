@@ -10,7 +10,7 @@ const FinancialTechnologies = ({title,priceKun,priceKech,priceSirt}) => {
     return (
         <div
             id={classes.card}
-            className="w-full  bg-white rounded-3xl  px-8 pt-12"
+            className="w-full flex flex-col justify-center bg-white rounded-3xl  px-8 pt-12 h-full"
         >
             <div className="text-start">
                 <h1

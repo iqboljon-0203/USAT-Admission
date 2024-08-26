@@ -12,8 +12,8 @@ import 'swiper/css/pagination';
 
 import CardBachelor from '../CardBachelor/App';
 export default function App() {
-    const Language=localStorage.getItem("i18nextLng");
-     
+    const Language = localStorage.getItem('i18nextLng');
+
     const CONTRACT_INFO_UZ = {
         'Maktabgacha ta’lim': {
             Kunduzgi: '12.9',
@@ -297,77 +297,111 @@ export default function App() {
         },
     };
 
-      
-
     return (
         <>
             <Swiper
-                style={{ height: '100%',display: 'flex', alignItems: 'stretch', justifyContent: 'space-between' }}
-                slidesPerView={1.5}
-                spaceBetween={30}
+                slidesPerView={1}
+                spaceBetween={20}
                 pagination={{
                     clickable: true,
                 }}
                 className="mySwiper"
+                style={{
+                    display: 'flex',
+                    alignItems: 'stretch',
+                    justifyContent: 'space-between',
+                }}
+                breakpoints={{
+                    200: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    800: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    1000: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 25,
+                    },
+                    1100: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 30,
+                    },
+                }}
             >
                 {Language === 'uz'
                     ? Object.keys(CONTRACT_INFO_UZ).map((key, index) => (
-                          <SwiperSlide style={{ height: '100%' }} key={index}>
-                                  <CardBachelor
-                                      title={key}
-                                      priceKun={CONTRACT_INFO_UZ[key].Kunduzgi}
-                                      priceKech={CONTRACT_INFO_UZ[key].Kechki}
-                                      priceSirt={CONTRACT_INFO_UZ[key].Sirtqi}
-                                      style={{
-                                          height: '100%',
-                                          display: 'flex',
-                                          flexDirection: 'column',
-                                          justifyContent: 'space-between',
-                                      }}
-                                  />
+                          <SwiperSlide
+                              key={index}
+                              style={{
+                                  display: 'flex',
+                                  height: 'auto', // Automatically adjust based on content
+                                  flexDirection: 'column',
+                                  justifyContent: 'stretch', // Stret
+                              }}
+                          >
+                              <CardBachelor
+                                  title={key}
+                                  priceKun={CONTRACT_INFO_UZ[key].Kunduzgi}
+                                  priceKech={CONTRACT_INFO_UZ[key].Kechki}
+                                  priceSirt={CONTRACT_INFO_UZ[key].Sirtqi}
+                                  style={{
+                                      flex: 1,
+                                      display: 'flex',
+                                      flexDirection: 'column',
+                                      justifyContent: 'space-between', // Ensures the content fills the SwiperSlide height
+                                  }}
+                              />
                           </SwiperSlide>
                       ))
                     : Language === 'ru'
                       ? Object.keys(CONTRACT_INFO_RU).map((key, index) => (
-                            <SwiperSlide style={{ height: '100%' }} key={index}>
-                                    <CardBachelor
-                                        title={key}
-                                        priceKun={CONTRACT_INFO_RU[key].Дневное}
-                                        priceKech={
-                                            CONTRACT_INFO_RU[key].Вечернее
-                                        }
-                                        priceSirt={
-                                            CONTRACT_INFO_RU[key].Заочное
-                                        }
-                                        style={{
-                                            height: '100%',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            justifyContent: 'space-between',
-                                        }}
-                                    />
+                            <SwiperSlide
+                                key={index}
+                                style={{
+                                    display: 'flex',
+                                    height: 'auto', // Automatically adjust based on content
+                                    flexDirection: 'column',
+                                    justifyContent: 'stretch', // Stret
+                                }}
+                            >
+                                <CardBachelor
+                                    title={key}
+                                    priceKun={CONTRACT_INFO_RU[key].Дневное}
+                                    priceKech={CONTRACT_INFO_RU[key].Вечернее}
+                                    priceSirt={CONTRACT_INFO_RU[key].Заочное}
+                                    style={{
+                                        flex: 1,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'space-between', // Ensures the content fills the SwiperSlide height
+                                    }}
+                                />
                             </SwiperSlide>
                         ))
                       : Object.keys(CONTRACT_INFO_EN).map((key, index) => (
-                            <SwiperSlide style={{ height: '100%' }} key={index}>
-                                    <CardBachelor
-                                        title={key}
-                                        priceKun={
-                                            CONTRACT_INFO_EN[key].FullTime
-                                        }
-                                        priceKech={
-                                            CONTRACT_INFO_EN[key].Evening
-                                        }
-                                        priceSirt={
-                                            CONTRACT_INFO_EN[key].PartTime
-                                        }
-                                        style={{
-                                            height: '100%',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            justifyContent: 'space-between',
-                                        }}
-                                    />
+                            <SwiperSlide
+                                key={index}
+                                style={{
+                                    display: 'flex',
+                                    height: 'auto', // Automatically adjust based on content
+                                    flexDirection: 'column',
+                                    justifyContent: 'stretch', // Stret
+                                }}
+                            >
+                                <CardBachelor
+                                    title={key}
+                                    priceKun={CONTRACT_INFO_EN[key].FullTime}
+                                    priceKech={CONTRACT_INFO_EN[key].Evening}
+                                    priceSirt={CONTRACT_INFO_EN[key].PartTime}
+                                    style={{
+                                        flex: 1,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'space-between', // Ensures the content fills the SwiperSlide height
+                                    }}
+                                />
                             </SwiperSlide>
                         ))}
             </Swiper>

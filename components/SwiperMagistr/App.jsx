@@ -80,43 +80,121 @@ export default function App() {
     return (
         <>
             <Swiper
-                slidesPerView={1.5}
-                spaceBetween={30}
+                slidesPerView={1}
+                spaceBetween={20}
                 pagination={{
                     clickable: true,
                 }}
+                style={{
+                    display: 'flex',
+                    alignItems: 'stretch',
+                    justifyContent: 'space-between',
+                }}
                 className="mySwiper"
+                breakpoints={{
+                    200: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    800: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    1000: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 25,
+                    },
+                    1100: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 30,
+                    },
+                }}
             >
                 {Languagemag === 'uz'
-                    ? Object.keys(CONTRACT_INFO_MAGISTR_UZ).map((key, index) => (
-                    <SwiperSlide key={index}>
-                        <CardMagistr
-                            title={key}
-                            priceKun={CONTRACT_INFO_MAGISTR_UZ[key].Kunduzgi}
-                            style={{ height: '100%' }}
-                        />
-                    </SwiperSlide>
-                ))
+                    ? Object.keys(CONTRACT_INFO_MAGISTR_UZ).map(
+                          (key, index) => (
+                              <SwiperSlide
+                                  style={{
+                                      display: 'flex',
+                                      height: 'auto', // Automatically adjust based on content
+                                      flexDirection: 'column',
+                                      justifyContent: 'stretch',
+                                  }}
+                                  key={index}
+                              >
+                                  <CardMagistr
+                                      title={key}
+                                      priceKun={
+                                          CONTRACT_INFO_MAGISTR_UZ[key].Kunduzgi
+                                      }
+                                      style={{
+                                          height: '100%',
+                                          flex: 1,
+                                          display: 'flex',
+                                          flexDirection: 'column',
+                                          justifyContent: 'space-between', // Ensures the content fills the SwiperSlide height
+                                      }}
+                                  />
+                              </SwiperSlide>
+                          ),
+                      )
                     : Languagemag === 'ru'
-                      ?Object.keys(CONTRACT_INFO_MAGISTR_RU).map((key, index) => (
-                    <SwiperSlide key={index}>
-                        <CardMagistr
-                            title={key}
-                            priceKun={CONTRACT_INFO_MAGISTR_RU[key].Дневное}
-                            style={{ height: '100%' }}
-                        />
-                    </SwiperSlide>
-                ))
-                      : Object.keys(CONTRACT_INFO_MAGISTR_EN).map((key, index) => (
-                    <SwiperSlide key={index}>
-                        <CardMagistr
-                            title={key}
-                            priceKun={CONTRACT_INFO_MAGISTR_EN[key].FullTime}
-                            style={{ height: '100%' }}
-                        />
-                    </SwiperSlide>
-                ))}
-                
+                      ? Object.keys(CONTRACT_INFO_MAGISTR_RU).map(
+                            (key, index) => (
+                                <SwiperSlide
+                                    style={{
+                                        display: 'flex',
+                                        height: 'auto', // Automatically adjust based on content
+                                        flexDirection: 'column',
+                                        justifyContent: 'stretch',
+                                    }}
+                                    key={index}
+                                >
+                                    <CardMagistr
+                                        title={key}
+                                        priceKun={
+                                            CONTRACT_INFO_MAGISTR_RU[key]
+                                                .Дневное
+                                        }
+                                        style={{
+                                            height: '100%',
+                                            flex: 1,
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'space-between', // Ensures the content fills the SwiperSlide height
+                                        }}
+                                    />
+                                </SwiperSlide>
+                            ),
+                        )
+                      : Object.keys(CONTRACT_INFO_MAGISTR_EN).map(
+                            (key, index) => (
+                                <SwiperSlide
+                                    style={{
+                                        display: 'flex',
+                                        height: 'auto', // Automatically adjust based on content
+                                        flexDirection: 'column',
+                                        justifyContent: 'stretch',
+                                    }}
+                                    key={index}
+                                >
+                                    <CardMagistr
+                                        title={key}
+                                        priceKun={
+                                            CONTRACT_INFO_MAGISTR_EN[key]
+                                                .FullTime
+                                        }
+                                        style={{
+                                            height: '100%',
+                                            flex: 1,
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'space-between', // Ensures the content fills the SwiperSlide height
+                                        }}
+                                    />
+                                </SwiperSlide>
+                            ),
+                        )}
             </Swiper>
         </>
     );

@@ -8,14 +8,14 @@ import classes from './page.module.css';
 const FinancialTechnologies = ({ title, priceKun }) => {
     const {t}=useTranslation();
     return (
-        <div id={classes.card} className="w-full bg-white rounded-3xl  px-8 pt-12">
+        <div id={classes.card} className="w-full flex flex-col justify-center  bg-white rounded-3xl  px-8 pt-12 h-full">
             <div className="text-start">
                 <h1 id={classes.card_title} className="text-5xl font-bold leading-[2.90rem] text-left text-cyan-900/[1] mb-4 uppercase">
                     {title}
                 </h1>
             </div>
-            <div className="space-y-2 mb-4">
-                <div className="py-6 mb-2">
+            <div className="space-y-2 mb-2">
+                <div className="py-4 mb-2">
                     <h2 id={classes.card_subtitle} className="text-4xl font-bold leading-[1.70rem] text-left uppercase text-cyan-900/[0.35] mb-4">
                         {t('kunduzgi')}
                     </h2>
@@ -32,7 +32,7 @@ const FinancialTechnologies = ({ title, priceKun }) => {
                     </div>
                 </div>
             </div>
-            <div className="text-center mt-6 mb-6">
+            <div className="text-center mt-2 mb-4">
                 <Link href="https://qabul.usat.uz/sign-up?phone=">
                     <button type="button" className="group w-full flex  items-center bg-amber-400/[1] pt-2  pr-8  pb-2  ps-2  gap-[0.63rem] rounded-full opacity-[0.00rem] hover:bg-yellow-600  transition-colors duration-300">
                         <Image

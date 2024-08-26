@@ -1,3 +1,8 @@
+ #card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
  #card_button_icon {
         width: 60px;
     }
