@@ -99,7 +99,7 @@ export default function App() {
         {
             title: "Abituriyent UZBMB (DTM) natijasi bilan oq'ishga imtihonsiz qabul qilinadimi?",
             content:
-                "Ha, davlat oliy ta'lim muassasiga test topshirgan bo'lsangiz va kontraktga ballingiz yetmagan bo'lsa, shu ball bilan universitetimizga imtihonsiz qabul qilinishingiz mumkin. Hujjatlaringizni <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='qabul.usat.uz'>qabul.usat.uz</a> sayti orqali topshirishingiz mumkin. Arizangiz javobi bir kunda telefon raqamingizga SMS tarzida yuboriladi.",
+                "Ha, davlat oliy ta'lim muassasiga test topshirgan bo'lsangiz va kontraktga ballingiz yetmagan bo'lsa, shu ball bilan universitetimizga imtihonsiz qabul qilinishingiz mumkin. Hujjatlaringizni <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='https://qabul.usat.uz'>qabul.usat.uz</a> sayti yoki <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='https://t.me/usat_bot?start=qabul_usat_uz'>Qabul boti</a> boti orqali topshirishingiz mumkin. Arizangiz javobi bir kunda telefon raqamingizga SMS tarzida yuboriladi.",
         },
         {
             title: "Chet tilini bilish sertifikatiga ega bo'lganlarga qandaydir imtiyozlar bormi?",
@@ -140,7 +140,7 @@ export default function App() {
         {
             title: 'Есть ли грантовые места в Университете науки и технологий?',
             content:
-                'В университете есть грантовые места. В конце августа проводится олимпиада "Жемчужины науки". Грантовые места выделяются победителям этой олимпиады.',
+                'В университете есть грантовые места. В конце августа проводится олимпиада «Fan javohirlari», победителям которой предоставляются грантовые места.',
         },
         {
             title: 'Предоставляются ли студентам университета стипендии?',
@@ -180,7 +180,7 @@ export default function App() {
         {
             title: 'Где находится университет, можно ли получить информацию о его адресе?',
             content: `<ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-            <li> - Адрес: г. Ташкент, Чиланзарская улица, 2</li>
+            <li> - Адрес: Адрес: г. Ташкент, Чиланзарский район, массив Алгоритм, ул. Дийдор, 71.</li>
             <li> - Ориентир: бывшее здание Roison</li>
             <li> - Локация: <a style='color: rgba(33, 70, 109, 1)' target='_blank' href="https://yandex.uz/maps/10335/tashkent/?ll=69.163080%2C41.261028&mode=whatshere&whatshere%5Bpoint%5D=69.163055%2C41.261021&whatshere%5Bzoom%5D=19.98&z=19">На Яндекс Картах</a> | <a style='color: rgba(33, 70, 109, 1)' target='_blank' href="https://www.google.com/maps/search/41.261005,+69.163074?entry=tts">На Google Картах</a></li>
             <li> - Связаться с нами: <a style='color: rgba(33, 70, 109, 1)' href="tel:+99878-888-38-88">+99878-888-38-88</a></li>
@@ -213,7 +213,7 @@ export default function App() {
         {
             title: 'Можно ли поступить с результатом UZBMB (ГЦЭ) без экзаменов?',
             content:
-                "Да, если вы сдавали тесты в государственном вузе и не набрали достаточно баллов для контракта, вы можете быть приняты в наш университет без экзаменов с этими баллами. Вы можете подать документы через сайт <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='qabul.usat.uz'>qabul.usat.uz</a>. Ответ на вашу заявку будет отправлен вам в виде SMS на ваш номер телефона в течение одного дня.",
+                "Да, если вы сдавали госэкзамен, но не набрали проходной балл для поступления в государственный вуз, вы можете быть приняты в наш университет без экзаменов по этим баллам. Вы можете подать свои документы через сайт q<a style='color: rgba(33, 70, 109, 1)' target='_blank' href='https://qabul.usat.uz'>qabul.usat.uz</a>. или через бот <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='https://t.me/usat_bot?start=qabul_usat_uz.'>Qabul Bot</a>. Ответ на вашу заявку будет отправлен в виде SMS на ваш телефон в течение одного дня.",
         },
         {
             title: 'Есть ли льготы для обладателей сертификатов владения иностранным языком?',
@@ -327,7 +327,7 @@ export default function App() {
         {
             title: 'Can applicants be admitted with UZBMB (DMT) results without exams?',
             content:
-                "Yes, if you took tests at a state higher education institution and did not score enough for the contract, you can be admitted to our university without exams with those scores. You can submit your documents through the <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='qabul.usat.uz'>qabul.usat.uz</a> website. Your application response will be sent to your phone number as an SMS within one day.",
+                "Yes, if you took tests at a state higher education institution and did not score enough for the contract, you can be admitted to our university without exams with those scores. You can submit your documents through the <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='qabul.usat.uz'>qabul.usat.uz</a> website or <a style='color: rgba(33, 70, 109, 1)' target='_blank' href='https://t.me/usat_bot?start=qabul_usat_uz'>Telegram bot</a>. Your application response will be sent to your phone number as an SMS within one day.",
         },
         {
             title: 'Are there any benefits for holders of language proficiency certificates?',

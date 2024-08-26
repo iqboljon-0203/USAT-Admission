@@ -7,7 +7,8 @@ import classses from './page.module.css'
 export default function App() {
     const { t } = useTranslation();
     return (
-        <Link href="https://qabul.usat.uz/sign-up?phone=">
+        <Link href="https://qabul.usat.uz/sign-up
+        ">
             <Button
                 id={classses.button}
                 size="lg"

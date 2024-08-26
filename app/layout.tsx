@@ -7,17 +7,17 @@ import "./i18n.jsx";
 import { Providers } from "./provider";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-    title: 'University of Science and Technologies',
+    title: 'Fan va texnalogiyalar universiteti',
     description:
-        'Learn about the admission process at the University of Science and Technology. Explore our programs, apply now, and start your journey towards a successful future.',
+        "Fan va texnologiyalar universiteti - fan va zamonaviy texnologiyalar mujassam bo'lgan universitet!",
     keywords:
-        'university admissions, science and technology, apply now, higher education, study programs, student applications',
-    robots: 'index, follow',
+        "qabul usat,usat,fan va texnalogiyalat universiteti,hujjat topshirish,oliy ta'lim,bakalavr,magistr,student arizasi,universitetga qabul",
+    robots: 'index, follow,page',
     viewport: 'width=device-width, initial-scale=1.0',
     authors: [
         {
-            name: 'University of Science and Technology',
-            url: 'https://qabul.usat.uz/',
+            name: 'Fan va texnalogiyalar universiteti',
+            url: 'https://usat.uz/',
         },
     ],
     icons: {
@@ -43,40 +43,38 @@ export const metadata: Metadata = {
                 sizes: '180x180',
             },
         ],
-        
     },
     openGraph: {
-        title: 'University of Science and Technologies',
+        title: 'fan va texnalogiyalar universiteti',
         description:
-            'Learn about the admission process at the University of Science and Technology. Explore our programs, apply now, and start your journey towards a successful future.',
-        url: 'https://qabul.usat.uz/',
-        siteName: 'University of Science and Technologies',
+            "Fan va texnologiyalar universiteti - fan va zamonaviy texnologiyalar mujassam bo'lgan universitet!",
+        url: 'https://usat.uz/',
+        siteName: 'Fan va texnalogiyalar universiteti',
         images: [
             {
-                url: 'https://qabul.usat.uz/assets/logos/back.png',
+                url: 'https://usat.uz/assets/logos/back.png',
                 width: 1200,
                 height: 630,
-                alt: 'University of Science and Technologies',
+                alt: 'A girl standing in the library of Usat University with a book in her hand',
             },
         ],
         type: 'website',
     },
     twitter: {
-        title: 'University of Science and Technologies',
+        title: 'Fan va texnalogiyalar universiteti',
         card: 'summary_large_image',
         description:
-            'Learn about the admission process at the University of Science and Technology. Explore our programs, apply now, and start your journey towards a successful future.',
+            "Fan va texnologiyalar universiteti - fan va zamonaviy texnologiyalar mujassam bo'lgan universitet!",
         images: [
             {
-                url: 'https://qabul.usat.uz/assets/logos/back.png',
+                url: 'https://usat.uz/assets/logos/back.png',
                 width: 1200,
                 height: 630,
-                alt: 'University of Science and Technologies',
+                alt: 'Fan va texnalogiyalar universiteti',
             },
         ],
-        creator: '@qabul.uz',
-    }
-    
+        creator: 'https://github.com/iqboljon-0203',
+    },
 };
 
 export default function RootLayout({

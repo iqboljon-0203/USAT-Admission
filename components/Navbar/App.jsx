@@ -16,52 +16,26 @@ import Image from 'next/image';
 import LanguageSelector from '../LanguageSelector/App';
 import classes from './page.module.css';
 import { useTranslation } from 'next-i18next';
+
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const { t } = useTranslation();
-     const scrollToSectionAfzal = () => {
-         const section = document.getElementById('university');
-         if (section) {
-             section.scrollIntoView({ behavior: 'smooth' });
-         }
-     };
-      const scrollToSectionUniver = () => {
-          const section = document.getElementById('info');
-          if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-          }
-      };
-       const scrollToSectionBakalavr = () => {
-           const section = document.getElementById('bachelor');
-           if (section) {
-               section.scrollIntoView({ behavior: 'smooth' });
-           }
-       };
-        const scrollToSectionQulay = () => {
-            const section = document.getElementById('magistr');
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        };
-        const scrollToSectionMagistr = () => {
-            const section = document.getElementById('contract');
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        };
-         const scrollToSectionQuestion = () => {
-             const section = document.getElementById('answers');
-             if (section) {
-                 section.scrollIntoView({ behavior: 'smooth' });
-             }
-         };
+
+    const scrollToSection = sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false); // Menu yopish
+        }
+    };
+
     const menuItems = [
-        t('afzalliklar'),
-        t('universitet_haqida'),
-        t('bakalavriat'),
-        t('qulayliklar'),
-        t('magistratura'),
-        t('savol-javob'),
+        { label: t('universitet_haqida'), section: 'info' },
+        { label: t('bakalavriat'), section: 'bachelor' },
+        { label: t('magistratura'), section: 'contract' },
+        { label: t('afzalliklar'), section: 'university' },
+        { label: t('qulayliklar'), section: 'magistr' },
+        { label: t('savol-javob'), section: 'answers' },
     ];
 
     return (
@@ -88,72 +62,28 @@ export default function App() {
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex" justify="center">
-                <NavbarItem>
-                    <Link
-                        onClick={scrollToSectionAfzal}
-                        className="text-xl px-6 font-Inter font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
-                        color="foreground"
-                    >
-                        {t('afzalliklar')}
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link
-                        onClick={scrollToSectionUniver}
-                        className="text-xl px-6 font-Inter font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
-                        color="foreground"
-                    >
-                        {t('universitet_haqida')}
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link
-                        onClick={scrollToSectionBakalavr}
-                        className="text-xl px-6 font-Inter font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
-                        color="foreground"
-                    >
-                        {t('bakalavriat')}
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link
-                        onClick={scrollToSectionQulay}
-                        className="text-xl px-6 font-Inter font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
-                        color="foreground"
-                    >
-                        {t('qulayliklar')}
-                    </Link>
-                </NavbarItem>
-                <NavbarItem>
-                    <Link
-                        onClick={scrollToSectionMagistr}
-                        className="text-xl px-6 font-Inter font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
-                        color="foreground"
-                    >
-                        {t('magistratura')}
-                    </Link>
-                </NavbarItem>
-
-                <NavbarItem>
-                    <Link
-                        onClick={scrollToSectionQuestion}
-                        className="text-xl px-6 font-Inter font-medium text-white leading-[1.82rem] text-center"
-                        color="foreground"
-                    >
-                        {t('savol-javob')}
-                    </Link>
-                </NavbarItem>
+                {menuItems.map((item, index) => (
+                    <NavbarItem key={index}>
+                        <Link
+                            onClick={() => scrollToSection(item.section)}
+                            className="text-xl px-6 font-Inter font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
+                            color="foreground"
+                        >
+                            {item.label}
+                        </Link>
+                    </NavbarItem>
+                ))}
             </NavbarContent>
 
             <NavbarContent justify="end">
                 <NavbarItem>
-                    <LanguageSelector></LanguageSelector>
+                    <LanguageSelector />
                 </NavbarItem>
             </NavbarContent>
 
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
+                    <NavbarMenuItem key={`${item.label}-${index}`}>
                         <Link
                             className="w-full"
                             color={
@@ -165,8 +95,9 @@ export default function App() {
                             }
                             href="#"
                             size="lg"
+                            onClick={() => scrollToSection(item.section)}
                         >
-                            {item}
+                            {item.label}
                         </Link>
                     </NavbarMenuItem>
                 ))}

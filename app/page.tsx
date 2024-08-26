@@ -14,13 +14,16 @@ import Questions from "@/customComponents/Questions/App";
                   {JSON.stringify({
                       '@context': 'https://schema.org',
                       '@type': 'Organization',
-                      name: 'University of Science and Technology',
-                      url: 'https://qabul.usat.uz/',
-                      logo: 'https://qabul.usat.uz/assets/logos/usatLogo.svg',
+                      name: 'Fan va texnalogiyalar universiteti',
+                      url: 'https://usat.uz/',
+                      logo: 'https://usat.uz/assets/logos/usatLogo.svg',
+                      description:
+                          "Fan va texnologiyalar universiteti - fan va zamonaviy texnologiyalar mujassam bo'lgan universitet!",
                       sameAs: [
-                          'https://www.facebook.com/usat.uz',
-                          'https://www.twitter.com/usat.uz',
-                          'https://www.linkedin.com/company/usat.uz',
+                          'https://www.facebook.com/usatuz',
+                          'https://www.instagram.com/usatuz/',
+                          'https://t.me/usatuzb',
+                          'https://www.youtube.com/@usatuz',
                       ],
                       contactPoint: {
                           '@type': 'ContactPoint',
@@ -31,9 +34,9 @@ import Questions from "@/customComponents/Questions/App";
                       },
                       address: {
                           '@type': 'PostalAddress',
-                          streetAddress: '123 Main St',
-                          addressLocality: 'Tashkent',
-                          addressRegion: 'Tashkent Region',
+                          streetAddress: 'Diydor street, house 71',
+                          addressLocality: 'Chilonzor district',
+                          addressRegion: 'Tashkent city',
                           postalCode: '100000',
                           addressCountry: 'UZ',
                       },
