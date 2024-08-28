@@ -6,7 +6,6 @@ import Head from "next/head";
 // import MagistrInfo from "@/customComponents/MagistrInfo/App";
 // import Magistr from "@/customComponents/Magistr/App";
 // import Questions from "@/customComponents/Questions/App";
-import { useTranslations } from 'next-intl';
 import dynamic from "next/dynamic";
  function Home() {
     const Hero = dynamic(() => import("@/customComponents/Hero/App"), { ssr: false });
@@ -16,7 +15,6 @@ import dynamic from "next/dynamic";
     const MagistrInfo = dynamic(() => import("@/customComponents/MagistrInfo/App"), { ssr: false });
     const Magistr = dynamic(() => import("@/customComponents/Magistr/App"), { ssr: false });
     const Questions = dynamic(() => import("@/customComponents/Questions/App"), { ssr: false });
-    const t = useTranslations();
   return (
       <main>
           <Head>
@@ -52,7 +50,6 @@ import dynamic from "next/dynamic";
                       },
                   })}
               </script>
-              <p>{t('ariza')}</p>
           </Head>
           <Hero></Hero>
           <About></About>

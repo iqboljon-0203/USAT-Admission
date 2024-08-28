@@ -178,6 +178,9 @@
         line-height: 22.8px;
         margin-bottom: 20px;
     }
+    .hero{
+        background-position: calc(50% - 120px) top;
+    }
 }
 @media screen and (max-width: 780px) {
     .title {

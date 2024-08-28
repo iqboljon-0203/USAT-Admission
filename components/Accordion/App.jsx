@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React from 'react';
 import { Accordion, AccordionItem } from '@nextui-org/react';
 import classes from './page.module.css';

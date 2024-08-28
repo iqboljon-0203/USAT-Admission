@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import classes from './page.module.css';
 import Usat from '../../assets/logos/usat.png';
 import Image from 'next/image';

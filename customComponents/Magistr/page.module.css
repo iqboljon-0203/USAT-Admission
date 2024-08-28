@@ -13,12 +13,12 @@
     gap: 20px;
 }
 .magistr_item {
-    width: 49.5%;
+    width: 49%;
     margin: 0px;
     border-radius: 30px;
 }
 .magistr_item_first {
-    width: 50.5%;
+    width: 51%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -66,7 +66,7 @@
     .inner_item {
         width: 80%;
     }
-    .magistr_item_title,  {
+    .magistr_item_title {
         font-size: 46px;
         font-weight: 700;
         line-height: 48.2px;
@@ -89,7 +89,7 @@
     .inner_item {
         width: 80%;
     }
-    .magistr_item_title,  {
+    .magistr_item_title {
         font-size: 42px;
         font-weight: 700;
         line-height: 44.2px;
