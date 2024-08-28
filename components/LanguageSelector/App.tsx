@@ -58,7 +58,7 @@ const LanguageSelector: React.FC = () => {
               onClick={toggleDropdown}
           >
               <span
-                  className={`fi fi-${getCookie('i18next') === 'uz' ? 'uz' : getCookie('i18next') === 'ru' ? 'ru' : getCookie('i18next') === 'gb'? 'gb' : 'uz'} mr-2`}
+                  className={`fi fi-${getCookie('i18next') === 'uz' ? 'uz' : getCookie('i18next') === 'ru' ? 'ru' : getCookie('i18next') === 'en'? 'gb' : 'uz'} mr-2`}
               ></span>
               {getCookie('i18next')?.toUpperCase() === selectedLanguage.label
                   ? selectedLanguage.label
