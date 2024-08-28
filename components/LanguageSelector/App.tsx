@@ -1,6 +1,6 @@
 "use client";
 // src/components/LanguageSelector.tsx
-import React, { useState, useRef, useEffect, ChangeEvent, startTransition } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import 'flag-icons/css/flag-icons.min.css';
 import classes from "./page.module.css"
 interface Language {
@@ -16,16 +16,14 @@ const languages: Language[] = [
     { code: 'en', label: 'ENG', flag: 'gb' },
 ];
 import { getCookie, setCookie } from 'cookies-next';
-import { useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 const LanguageSelector: React.FC = () => {
-  // const [startTransition, isPending] = useTransition();
   const router=useRouter()
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const t=useTranslations();
-  
+ 
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       setIsOpen(false);
@@ -60,7 +58,7 @@ const LanguageSelector: React.FC = () => {
               onClick={toggleDropdown}
           >
               <span
-                  className={`fi fi-${getCookie('i18next') === 'uz' ? 'uz' : getCookie('i18next') === 'ru' ? 'ru' : 'gb'} mr-2`}
+                  className={`fi fi-${getCookie('i18next') === 'uz' ? 'uz' : getCookie('i18next') === 'ru' ? 'ru' : getCookie('i18next') === 'gb'? 'gb' : 'uz'} mr-2`}
               ></span>
               {getCookie('i18next')?.toUpperCase() === selectedLanguage.label
                   ? selectedLanguage.label

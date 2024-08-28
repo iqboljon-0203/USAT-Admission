@@ -1,11 +1,10 @@
 "use client";
 import classes from "./page.module.css"
-// import Accordion from "@/components/Accordion/App";
+import Accordion from "@/components/Accordion/App";
 import { useTranslations } from "next-intl";
-import dynamic from "next/dynamic";
 const Questions: React.FC = () => {
     const  t  = useTranslations();
-    const Accordion = dynamic(() => import('@/components/Accordion/App'), { ssr: false });
+    // const Accordion = dynamic(() => import('@/components/Accordion/App'), { ssr: false });
     return (
         <section id="answers" className={classes.questions}>
             <div className={classes.questions_content}>
