@@ -88,11 +88,12 @@ export default async function RootLayout({
   return (
       <html suppressHydrationWarning={false} lang={locale}>
           <body className={inter.className}>
-                <NextIntlClientProvider messages={messages}>
-                    <Providers> {children}</Providers>
-                </NextIntlClientProvider>
+              <Providers>
+                  <NextIntlClientProvider messages={messages}>
+                      {children}
+                  </NextIntlClientProvider>
+              </Providers>
           </body>
-          
       </html>
   );
 }
