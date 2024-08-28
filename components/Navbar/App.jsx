@@ -13,14 +13,14 @@ import {
 } from '@nextui-org/react';
 import UsatLogo from '../../assets/logos/usatLogo.svg';
 import Image from 'next/image';
-import LanguageSelector from '../LanguageSelector/App';
+// import LanguageSelector from '../LanguageSelector/App';
 import classes from './page.module.css';
 import { useTranslations } from 'next-intl';
-
+import dynamic from 'next/dynamic';
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const  t = useTranslations();
-
+    const LanguageSelector= dynamic(() => import('../LanguageSelector/App'), { ssr: false });
     const scrollToSection = sectionId => {
         const section = document.getElementById(sectionId);
         if (section) {
