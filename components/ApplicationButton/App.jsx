@@ -2,10 +2,10 @@ import React from 'react';
 import { Button } from '@nextui-org/react';
 import { FileIcon } from './FileIcon';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 import classses from './page.module.css'
 export default function App() {
-    const { t } = useTranslation();
+    const  t  = useTranslations();
     return (
         <Link href="https://qabul.usat.uz/sign-up
         ">

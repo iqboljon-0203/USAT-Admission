@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.usat.uz/
+
+# Sitemaps
+Sitemap: https://www.usat.uz/sitemap.xml

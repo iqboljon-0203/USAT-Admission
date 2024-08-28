@@ -10,8 +10,9 @@ import "./styles.css";
 // import required modules
 
 import CardMagistr from '../CardMagistr/App';
+import { getCookie } from 'cookies-next';
 export default function App() {
-    const Languagemag = localStorage.getItem('i18nextLng');
+    const Languagemag = getCookie("i18next")||"uz";
     const CONTRACT_INFO_MAGISTR_UZ = {
         "Ijtimoiy-gumanitar fanlarni o'qitish metodikasi (tarix)": {
             Kunduzgi: '21.8',

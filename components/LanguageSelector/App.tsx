@@ -1,6 +1,6 @@
 "use client";
 // src/components/LanguageSelector.tsx
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, ChangeEvent, startTransition } from 'react';
 import 'flag-icons/css/flag-icons.min.css';
 import classes from "./page.module.css"
 interface Language {
@@ -8,20 +8,23 @@ interface Language {
   label: string;
   flag: string;
 }
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 const languages: Language[] = [
     { code: 'uz', label: 'UZ', flag: 'uz' },
     { code: 'ru', label: 'RU', flag: 'ru' },
     { code: 'en', label: 'ENG', flag: 'gb' },
 ];
-
+import { getCookie, setCookie } from 'cookies-next';
+import { useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 const LanguageSelector: React.FC = () => {
+  // const [startTransition, isPending] = useTransition();
+  const router=useRouter()
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const {i18n}=useTranslation();
-  const newlanguage = localStorage.getItem('i18nextLng')||"uz";
+  const t=useTranslations();
   
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -41,9 +44,11 @@ const LanguageSelector: React.FC = () => {
   };
 
   const handleLanguageChange = (language: Language) => {
+    const nextlocale=language.code;
+    router.replace(`/${nextlocale}`);
     setSelectedLanguage(language);
-    i18n.changeLanguage(language.code);
     setIsOpen(false);
+    setCookie('i18next', language.code);
   };
 
   return (
@@ -55,11 +60,11 @@ const LanguageSelector: React.FC = () => {
               onClick={toggleDropdown}
           >
               <span
-                  className={`fi fi-${newlanguage === 'uz' ? 'uz' : newlanguage === 'ru' ? 'ru' : 'gb'} mr-2`}
+                  className={`fi fi-${getCookie('i18next') === 'uz' ? 'uz' : getCookie('i18next') === 'ru' ? 'ru' : 'gb'} mr-2`}
               ></span>
-              {newlanguage.toUpperCase() === selectedLanguage.label
+              {getCookie('i18next')?.toUpperCase() === selectedLanguage.label
                   ? selectedLanguage.label
-                  : i18n.language.toUpperCase()}
+                  : getCookie('i18next')?.toUpperCase()}
               <svg
                   className="fill-current h-4 w-4 ml-2"
                   xmlns="http://www.w3.org/2000/svg"
@@ -72,9 +77,9 @@ const LanguageSelector: React.FC = () => {
               <ul className="absolute mt-1 w-full bg-white border border-gray-400 rounded shadow-lg z-10">
                   {languages.map(language => (
                       <li
-                          key={newlanguage}
+                          key={getCookie('i18next') || 'uz'.toUpperCase()}
                           className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
-                          onClick={() => handleLanguageChange(language)}
+                          onClick={(e) => handleLanguageChange(language)}
                       >
                           <span
                               className={`fi fi-${language.flag} mr-2`}

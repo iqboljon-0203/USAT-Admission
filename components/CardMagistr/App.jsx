@@ -3,10 +3,10 @@ import React from 'react';
 import File from '../../assets/logos/filenew.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 import classes from './page.module.css';
 const FinancialTechnologies = ({ title, priceKun }) => {
-    const {t}=useTranslation();
+    const t=useTranslations();
     return (
         <div id={classes.card} className="w-full flex flex-col justify-center  bg-white rounded-3xl  px-8 pt-12 h-full">
             <div className="text-start">

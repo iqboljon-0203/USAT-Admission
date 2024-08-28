@@ -6,7 +6,9 @@ import Bachelor from "@/customComponents/Bachelor/App";
 import MagistrInfo from "@/customComponents/MagistrInfo/App";
 import Magistr from "@/customComponents/Magistr/App";
 import Questions from "@/customComponents/Questions/App";
+import { useTranslations } from 'next-intl';
  function Home() {
+     const t = useTranslations();
   return (
       <main>
           <Head>
@@ -42,6 +44,7 @@ import Questions from "@/customComponents/Questions/App";
                       },
                   })}
               </script>
+              <p>{t('ariza')}</p>
           </Head>
           <Hero></Hero>
           <About></About>

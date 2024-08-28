@@ -1,9 +1,9 @@
 "use client";
 import classes from "./page.module.css"
 import Accordion from "@/components/Accordion/App";
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";
 const Questions: React.FC = () => {
-    const { t } = useTranslation();
+    const  t  = useTranslations();
     return (
         <section id="answers" className={classes.questions}>
             <div className={classes.questions_content}>

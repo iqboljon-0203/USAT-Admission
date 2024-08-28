@@ -1,9 +1,9 @@
 "use client"
 import classes from "./page.module.css"
 import Swiper from '../../components/Swiper/App';
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";
 const Bachelor: React.FC = () => {
-    const { t } = useTranslation();
+    const t  = useTranslations();
     return (
         <section id="bachelor" className={classes.bachelor}>
             <ul className={classes.bachelor_list}>

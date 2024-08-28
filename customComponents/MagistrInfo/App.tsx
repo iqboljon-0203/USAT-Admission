@@ -2,10 +2,11 @@
 import Students from "../../assets/logos/students.png"
 import Image from "next/image";
 import classes from "./page.module.css"
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";    
+import { getCookie } from 'cookies-next';
 const MagistrInfo: React.FC = () => {
-    const language=window.localStorage.getItem("i18nextLng");
-    const { t } = useTranslation();
+    const language=getCookie('i18next')||"uz";
+    const  t  = useTranslations();
     return (
         <div id="magistr" className={classes.magistr_info}>
             <ul className={classes.magistr_info_list}>

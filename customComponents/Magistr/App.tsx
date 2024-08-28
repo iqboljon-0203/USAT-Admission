@@ -1,9 +1,9 @@
 "use client";
 import classes from "./page.module.css"
 import SwiperMagistr from '../../components/SwiperMagistr/App';
-import { useTranslation } from "next-i18next";
+import { useTranslations } from "next-intl";
 const Magistr: React.FC = () => {
-    const { t } = useTranslation();
+    const t  = useTranslations();
     return (
         <section id="contract" className={classes.magistr}>
             <ul className={classes.magistr_list}>

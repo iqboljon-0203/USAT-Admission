@@ -2,9 +2,9 @@
 import classes from './page.module.css';
 import Usat from '../../assets/logos/usat.png';
 import Image from 'next/image';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 const Info: React.FC = () => {
-    const { t } = useTranslation();
+    const  t  = useTranslations();
     return (
         <section id="info" className={classes.info}>
             <ul className={classes.info_list}>

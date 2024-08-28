@@ -11,8 +11,9 @@ import 'swiper/css/pagination';
 // import required modules
 
 import CardBachelor from '../CardBachelor/App';
+import { getCookie } from 'cookies-next';
 export default function App() {
-    const Language = localStorage.getItem('i18nextLng');
+    const Language = getCookie("i18next")||"uz";
 
     const CONTRACT_INFO_UZ = {
         'Maktabgacha ta’lim': {

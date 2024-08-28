@@ -15,11 +15,11 @@ import UsatLogo from '../../assets/logos/usatLogo.svg';
 import Image from 'next/image';
 import LanguageSelector from '../LanguageSelector/App';
 import classes from './page.module.css';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const { t } = useTranslation();
+    const  t = useTranslations();
 
     const scrollToSection = sectionId => {
         const section = document.getElementById(sectionId);

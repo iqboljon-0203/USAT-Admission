@@ -13,12 +13,12 @@ import Earning from '../../assets/logos/fi-rr-earnings.svg';
 import UserGroup from '../../assets/logos/user-group.svg';
 import Graduation from '../../assets/logos/fi-rr-graduation-cap.svg';
 import Diploma from '../../assets/logos/fi-rr-diploma.svg';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from 'next-intl';
 import Image from "next/image"
 // import required modules
 import { Pagination } from 'swiper/modules';
 export default function App() {
-    const { t } = useTranslation();
+    const  t  = useTranslations();
 
     return (
         <>

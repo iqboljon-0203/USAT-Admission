@@ -3,10 +3,9 @@ import React from 'react';
 import { Accordion, AccordionItem } from '@nextui-org/react';
 import classes from './page.module.css';
 import { useState } from 'react';
+import { getCookie } from 'cookies-next';
 export default function App() {
-    const mainLang=localStorage.getItem('i18nextLng')||"uz";
-    const defaultContent =
-        'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.';
+    const mainLang=getCookie("i18next");   
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const handleAccordionChange = index => {
@@ -303,7 +302,7 @@ export default function App() {
         {
             title: "Can I follow the university's activities on social media?",
             content: `<ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-            Absolutely, below are the links to the University of Science and Technology\'s social media pages:
+            Absolutely, below are the links to the University of Science and Technology's social media pages:
             <li> - <a style='color: rgba(33, 70, 109, 1)' target='_blank' href="https://instagram.com/usatuz">Instagram</a></li>
             <li> - <a style='color: rgba(33, 70, 109, 1)' target='_blank' href="https://t.me/usatuzb">Telegram</a></li>
             <li> - <a style='color: rgba(33, 70, 109, 1)' target='_blank' href="https://facebook.com/usatuz">Facebook</a></li>

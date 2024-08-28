@@ -5,9 +5,9 @@ import Instagram from "../../assets/logos/insta.svg";
 import Facebook from '../../assets/logos/facebook.svg';
 import Image from 'next/image';
 import classes from "./page.module.css"
-import { useTranslation } from 'next-i18next';
+import { useTranslations} from 'next-intl';
 const Footer: React.FC = () => {
-    const { t } = useTranslation();
+    const t  = useTranslations();
     return (
         <footer className={classes.footer}>
             <div className="mx-auto px-4">

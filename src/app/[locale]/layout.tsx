@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "./globals.css";
-import "./i18n.jsx";
-import { Providers } from "./provider";
+import { Providers } from "../provider";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: 'Fan va texnalogiyalar universiteti',
@@ -13,7 +14,6 @@ export const metadata: Metadata = {
     keywords:
         "qabul usat,usat,fan va texnalogiyalat universiteti,hujjat topshirish,oliy ta'lim,bakalavr,magistr,student arizasi,universitetga qabul",
     robots: 'index, follow,page',
-    viewport: 'width=device-width, initial-scale=1.0',
     authors: [
         {
             name: 'Fan va texnalogiyalar universiteti',
@@ -77,15 +77,20 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+    const messages = await getMessages();
   return (
-      <html lang="en">
+      <html lang={locale}>
           <body className={inter.className}>
-              <Providers> {children}</Providers>
+                <NextIntlClientProvider messages={messages}>
+                    <Providers> {children}</Providers>
+                </NextIntlClientProvider>
           </body>
           
       </html>

@@ -5,9 +5,9 @@ import classes from "./page.module.css"
 import AppButton from "../../components/ApplicationButton/App";
 import CabinetButton from "../../components/CabinetButton/App";
 import Footer from '../Footer/App';
-import { useTranslation } from 'next-i18next';
+import { useTranslations } from "next-intl";
 const Hero: React.FC = () => {
-    const { t } = useTranslation();
+    const  t = useTranslations();
     return (
         <div className={classes.hero}>
             <Navbar></Navbar>
