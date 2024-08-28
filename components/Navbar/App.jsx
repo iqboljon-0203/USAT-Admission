@@ -66,7 +66,7 @@ export default function App() {
                     <NavbarItem key={index}>
                         <Link
                             onClick={() => scrollToSection(item.section)}
-                            className="text-xl px-6 font-Inter font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
+                            className="text-xl px-6 font-Inter  font-medium hover:cursor-pointer text-white leading-[1.82rem] text-center"
                             color="foreground"
                         >
                             {item.label}
@@ -81,13 +81,13 @@ export default function App() {
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarMenu>
+            <NavbarMenu className='pt-10'>
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item.label}-${index}`}>
                         <Link
                             className="w-full"
                             color={
-                                index === 2
+                                index === 0
                                     ? 'warning'
                                     : index === menuItems.length - 1
                                       ? 'danger'

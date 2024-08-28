@@ -5,7 +5,7 @@ import classes from './page.module.css';
 import { useState } from 'react';
 import { getCookie } from 'cookies-next';
 export default function App() {
-    const mainLang=getCookie("i18next");   
+    const mainLang=getCookie("i18next")||'uz';   
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const handleAccordionChange = index => {
