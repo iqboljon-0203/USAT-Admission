@@ -1,14 +1,22 @@
 import Head from "next/head";
-import Hero from "@/customComponents/Hero/App";
-import About from "@/customComponents/About/App";
-import Info from "@/customComponents/Info/App";
-import Bachelor from "@/customComponents/Bachelor/App";
-import MagistrInfo from "@/customComponents/MagistrInfo/App";
-import Magistr from "@/customComponents/Magistr/App";
-import Questions from "@/customComponents/Questions/App";
+// import Hero from "@/customComponents/Hero/App";
+// import About from "@/customComponents/About/App";
+// import Info from "@/customComponents/Info/App";
+// import Bachelor from "@/customComponents/Bachelor/App";
+// import MagistrInfo from "@/customComponents/MagistrInfo/App";
+// import Magistr from "@/customComponents/Magistr/App";
+// import Questions from "@/customComponents/Questions/App";
 import { useTranslations } from 'next-intl';
+import dynamic from "next/dynamic";
  function Home() {
-     const t = useTranslations();
+    const Hero = dynamic(() => import("@/customComponents/Hero/App"), { ssr: false });
+    const About = dynamic(() => import("@/customComponents/About/App"), { ssr: false });
+    const Info = dynamic(() => import("@/customComponents/Info/App"), { ssr: false });
+    const Bachelor = dynamic(() => import("@/customComponents/Bachelor/App"), { ssr: false });
+    const MagistrInfo = dynamic(() => import("@/customComponents/MagistrInfo/App"), { ssr: false });
+    const Magistr = dynamic(() => import("@/customComponents/Magistr/App"), { ssr: false });
+    const Questions = dynamic(() => import("@/customComponents/Questions/App"), { ssr: false });
+    const t = useTranslations();
   return (
       <main>
           <Head>
